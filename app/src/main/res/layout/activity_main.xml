@@ -1,18 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.zjz.swipecardview.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.example.zjz.swipecardview.swipe.SwipeFlingAdapterView
+        android:id="@+id/swipe_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:max_visible="4"
+        app:min_adapter_stack="4"
+        app:rotation_degrees="30"
+        app:y_offset_step="28dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/linear_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#fff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linear_left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/icon_words_learn_left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="移除掉"
+                android:textColor="#656565"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/anchor"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="#f2f2f2" />
+
+        <LinearLayout
+            android:id="@+id/linear_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/icon_words_learn_right" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="放后面"
+                android:textColor="#656565"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

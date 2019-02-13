@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <declare-styleable name="SwipeFlingAdapterView">
+        <!--y轴上的偏移距离-->
+        <attr name="y_offset_step" format="dimension" />
+        <attr name="rotation_degrees" format="float" />
+        <attr name="min_adapter_stack" format="integer" />
+        <!--最大的可视卡片-->
+        <attr name="max_visible" format="integer" />
+    </declare-styleable>
+
 </resources>
